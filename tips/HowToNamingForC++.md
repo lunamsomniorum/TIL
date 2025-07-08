@@ -26,6 +26,9 @@
 ##### 終了する
 - quite + 名詞 ： 〇〇をやめる
 - exit ： やめる、出る
+- close : 閉じる（ファイルやコネクト）
+- finish/complete : やり遂げる
+- end : 終わらせる
 ##### 取り消す
 - cancel
 ##### 停止する
@@ -78,6 +81,47 @@ exists + 名詞
 - const k_snake_kase
 
 ## 制御
-``` cpp
-if (exists_error) 
+``` cpp:if
+処理分岐
+if (loop_count == 0) {
+  ...
+} else if (loop_count > 5) {
+  ...
+} else {
+  ...
+}
+```
+#### switch
+同階層の関数呼び出し分岐や列挙子による制御
+``` cpp:switch
+switch (command) {
+  case 0:
+    RunProccess1();
+    break;
+  case 1:
+    RunProccess2();
+    break;
+  default:
+    ; /* do nothing */
+    break;
+}
+```
+``` cpp:for
+for (int i = 0; i < 3; i++) {
+  if (i == 2) break;
+}
+```
+``` cpp:while
+int i = 0;
+while (!should_stop) {
+  i++;
+  if (i == 2) break;
+}
+```
+``` cpp:do-while
+int i = 0;
+do {
+  i++;
+  if (i == 2) break;
+} while (!should_stop)
 ```
