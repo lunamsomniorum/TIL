@@ -81,6 +81,10 @@ exists + 名詞
 - const k_snake_kase
 
 ## 制御
+### if
+条件分岐
+- 条件式は否定を極力使わない
+  - 例外は早期リターンなど
 ``` cpp:if
 処理分岐
 if (loop_count == 0) {
@@ -106,14 +110,21 @@ switch (command) {
     break;
 }
 ```
+
+#### for
+ループ離脱条件がループ回数(全要素の探索・操作など)
 ``` cpp:for
 for (int i = 0; i < 3; i++) {
   if (i == 2) break;
 }
 ```
+#### while
+ループ離脱条件が回数以外(タイムアウトなど)
+- 条件式は否定を極力使わない
 ``` cpp:while
 int i = 0;
-while (!should_stop) {
+while (elapsed_time_ms <= TIME_OUT_MS) {
+  if (should_stop) break;
   i++;
   if (i == 2) break;
 }
@@ -123,5 +134,6 @@ int i = 0;
 do {
   i++;
   if (i == 2) break;
-} while (!should_stop)
+  if (should_stop) break;
+} while (elapsed_time_ms <= TIME_OUT_MS)
 ```
