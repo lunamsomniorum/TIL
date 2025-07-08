@@ -64,7 +64,7 @@ should + 動詞
 - should_stop
 #### 存在
 exists + 名詞
-- exists_errot
+- exists_error
 - exists_file
 
 ### 文字列
